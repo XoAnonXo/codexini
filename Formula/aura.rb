@@ -1,7 +1,7 @@
 class Aura < Formula
   desc "Local voice bridge for Claude Code and Codex"
   homepage "https://codexini.com"
-  version "0.3.0"
+  version "0.3.1"
   # Proprietary, all rights reserved. The repo is public for
   # auditability + brew distribution, but use beyond running the
   # signed binaries from this tap requires explicit written
@@ -11,12 +11,12 @@ class Aura < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.0/aura-0.3.0-aarch64-apple-darwin.tar.gz"
-      sha256 "8c50221744efeaf3c442e3a9fe85c65d0c966631effef836b88ef87592bbe39d"
+      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.1/aura-0.3.1-aarch64-apple-darwin.tar.gz"
+      sha256 "b3a0e4820ffd2b04dca08941cfaae1728bda6b7737ba5fda9efbaf81bbef00a6"
     end
     on_intel do
-      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.0/aura-0.3.0-x86_64-apple-darwin.tar.gz"
-      sha256 "1f89c49d3201260364189461b9a133908c62b69c3022fb91b45c1769f0f57ad9"
+      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.1/aura-0.3.1-x86_64-apple-darwin.tar.gz"
+      sha256 "3c0771ab436db4e4fa2c5ecbc6d6d657c416d0b5ba62d5fb04d0108b27c52df1"
     end
   end
 
@@ -58,9 +58,9 @@ class Aura < Formula
       verified.
 
       The first call asks for microphone access — click OK.
-      Aura's activation token is auto-enrolled via your local
-      Claude Code OAuth (or paste an AURA_INVITE token if you
-      got one in beta).
+      Release builds include Aura activation for Codex
+      onboarding, while Claude installs can also refresh
+      activation through Claude Code OAuth.
     EOS
   end
 
