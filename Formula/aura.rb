@@ -1,7 +1,7 @@
 class Aura < Formula
   desc "Local voice bridge for Claude Code and Codex"
   homepage "https://codexini.com"
-  version "0.3.1"
+  version "0.3.3"
   # Proprietary, all rights reserved. The repo is public for
   # auditability + brew distribution, but use beyond running the
   # signed binaries from this tap requires explicit written
@@ -11,12 +11,12 @@ class Aura < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.1/aura-0.3.1-aarch64-apple-darwin.tar.gz"
-      sha256 "b3a0e4820ffd2b04dca08941cfaae1728bda6b7737ba5fda9efbaf81bbef00a6"
+      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.3/aura-0.3.3-aarch64-apple-darwin.tar.gz"
+      sha256 "2146135f560b1113b0707fd37c5fa4a1b88e2239cbe668ac418312aa8eab4407"
     end
     on_intel do
-      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.1/aura-0.3.1-x86_64-apple-darwin.tar.gz"
-      sha256 "3c0771ab436db4e4fa2c5ecbc6d6d657c416d0b5ba62d5fb04d0108b27c52df1"
+      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.3/aura-0.3.3-x86_64-apple-darwin.tar.gz"
+      sha256 "5f208cd7954b86bd5c7884b8f39a89564127aca096075ac1a7a07f5f2bd52262"
     end
   end
 
@@ -48,14 +48,6 @@ class Aura < Formula
       Aura is installed. To start a voice call:
 
         aura call --onboarding
-
-      On the very first launch, macOS may show a Gatekeeper
-      dialog: "macOS cannot verify aura is free of malware."
-      Click Open. Aura is signed with a real Developer ID
-      cert (Apple Team TVN7W8K9JV) — Apple's notary queue is
-      occasionally backlogged so some releases ship signed
-      but not yet fully notarized. The signature is still
-      verified.
 
       The first call asks for microphone access — click OK.
       Release builds include Aura activation for Codex
