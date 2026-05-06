@@ -1,7 +1,7 @@
 class Aura < Formula
   desc "Local voice bridge for Claude Code and Codex"
   homepage "https://codexini.com"
-  version "0.3.6"
+  version "0.3.7"
   # Proprietary, all rights reserved. The repo is public for
   # auditability + brew distribution, but use beyond running the
   # signed binaries from this tap requires explicit written
@@ -11,12 +11,12 @@ class Aura < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.6/aura-0.3.6-aarch64-apple-darwin.tar.gz"
-      sha256 "5388f576a1c65062a3069ecd150b05574e6121ef0c5d33bab1e395763cacdc6a"
+      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.7/aura-0.3.7-aarch64-apple-darwin.tar.gz"
+      sha256 "35ef28f86dcd910f1879419731cf4e58b7444e0fec6bb0e77355ff45f922fe01"
     end
     on_intel do
-      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.6/aura-0.3.6-x86_64-apple-darwin.tar.gz"
-      sha256 "940e9ffc8780a9cd880b6739700ed5c3a065dc3d1bf029784d749ee096a2648c"
+      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.7/aura-0.3.7-x86_64-apple-darwin.tar.gz"
+      sha256 "8e664a8fd1571c8e89b1c1f66c4831fcaf865e174208afa9dfd484fcb4543072"
     end
   end
 
