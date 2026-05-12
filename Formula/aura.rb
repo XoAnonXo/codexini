@@ -12,11 +12,11 @@ class Aura < Formula
   on_macos do
     on_arm do
       url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.8/aura-0.3.8-aarch64-apple-darwin.tar.gz"
-      sha256 "b0c41a8897eaaf15f5599fc74cf6a7881d263ffa371b2f5e8a6654345033fe43"
+      sha256 "8b63c1564e9150bc4d9831ee14900d80faa1c562483c2c789121ac9315291008"
     end
     on_intel do
       url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.8/aura-0.3.8-x86_64-apple-darwin.tar.gz"
-      sha256 "4462e0ae1fb1043a724f6077dbe295b1760293fda4cb2ebefb2acbbbfa71fe22"
+      sha256 "60adb3c324b46b88a86772c70e0f667646204d6edd3b91a9b9ed519ead16c1af"
     end
   end
 
