@@ -1,7 +1,7 @@
 class Aura < Formula
   desc "Local voice bridge for Claude Code and Codex"
   homepage "https://codexini.com"
-  version "0.3.9"
+  version "0.3.10"
   # Proprietary, all rights reserved. The repo is public for
   # auditability + brew distribution, but use beyond running the
   # signed binaries from this tap requires explicit written
@@ -11,18 +11,21 @@ class Aura < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.9/aura-0.3.9-aarch64-apple-darwin.tar.gz"
-      sha256 "20d0bd963838fdbc601e15bca6c2610f152b3659d87db0822784eaf5a79f1cf6"
+      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.10/aura-0.3.10-aarch64-apple-darwin.tar.gz"
+      sha256 "ff9670bb716958cabe8af547cd940910debcf398baa4180d10b523522cced479"
     end
     on_intel do
-      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.9/aura-0.3.9-x86_64-apple-darwin.tar.gz"
-      sha256 "daed858408b48603643e5604a0a72dcec6ad429a1b9dd4c38e686739e8298fc5"
+      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.10/aura-0.3.10-x86_64-apple-darwin.tar.gz"
+      sha256 "72a1196dc8446319d9adbe7b0ac713f30fe61209c043e7f1e968b545b60223ca"
     end
   end
 
   def install
     bin.install "bin/aura"
-    bin.install "bin/aura-orb"
+    bin.install "bin/AuraSwiftFrontend" => "aura-swift"
+    # Legacy rollback app. Keep it out of PATH so Swift is the
+    # canonical desktop surface, but ship it for emergency rollback.
+    libexec.install "bin/aura-orb" => "aura-orb-legacy"
     # Stage the plugin tree so post_install can wire it into
     # the user's ~/.claude/plugins/ via aura register-plugin.
     # Use rename-install (`share.install "plugin" => "claude-aura"`)
@@ -48,6 +51,10 @@ class Aura < Formula
       Aura is installed. To start a voice call:
 
         aura call --onboarding
+
+      To open the Swift desktop app from Terminal:
+
+        aura-swift
 
       The first call asks for microphone access — click OK.
       Release builds include Aura activation for Codex
