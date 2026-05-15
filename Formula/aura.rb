@@ -1,7 +1,7 @@
 class Aura < Formula
   desc "Local voice bridge for Claude Code and Codex"
   homepage "https://codexini.com"
-  version "0.3.10"
+  version "0.3.11"
   # Proprietary, all rights reserved. The repo is public for
   # auditability + brew distribution, but use beyond running the
   # signed binaries from this tap requires explicit written
@@ -11,21 +11,22 @@ class Aura < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.10/aura-0.3.10-aarch64-apple-darwin.tar.gz"
-      sha256 "ff9670bb716958cabe8af547cd940910debcf398baa4180d10b523522cced479"
+      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.11/aura-0.3.11-aarch64-apple-darwin.tar.gz"
+      sha256 "e10f636d7d42cf2e6f0707a42d5a6207050f7e95d5baa07e5aba8dcdbebc8e2c"
     end
     on_intel do
-      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.10/aura-0.3.10-x86_64-apple-darwin.tar.gz"
-      sha256 "72a1196dc8446319d9adbe7b0ac713f30fe61209c043e7f1e968b545b60223ca"
+      url "https://github.com/XoAnonXo/XOaura/releases/download/v0.3.11/aura-0.3.11-x86_64-apple-darwin.tar.gz"
+      sha256 "5e032f68c5efe13fbec2dd1f9abf06c08eeeee5ad52b4d60a050f5c4b1f8b588"
     end
   end
 
   def install
     bin.install "bin/aura"
     bin.install "bin/AuraSwiftFrontend" => "aura-swift"
-    # Legacy rollback app. Keep it out of PATH so Swift is the
-    # canonical desktop surface, but ship it for emergency rollback.
-    libexec.install "bin/aura-orb" => "aura-orb-legacy"
+    # Legacy rollback app is optional and absent from normal releases.
+    if File.exist?("bin/aura-orb")
+      libexec.install "bin/aura-orb" => "aura-orb-legacy"
+    end
     # Stage the plugin tree so post_install can wire it into
     # the user's ~/.claude/plugins/ via aura register-plugin.
     # Use rename-install (`share.install "plugin" => "claude-aura"`)
